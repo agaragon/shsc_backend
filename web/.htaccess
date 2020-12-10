@@ -1,4 +1,3 @@
-
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ phpRoutines/router.php [QSA,L]
+RewriteRule ^ index.php [QSA,L]
