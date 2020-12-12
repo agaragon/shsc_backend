@@ -9,7 +9,7 @@ function insertImageDataInTable(){
     $imagedrescription = $_POST['imagedescription'];
     $price= $_POST['price'];
     $brand = $_POST['brand'];
-    $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbNameImages,$dbPort);
+    $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
     $sql = "INSERT INTO $dbTableImages (imagename,username,imageaddress,imagedescription,price,brand)
     VALUES ('$imagename','$username','$imageaddress','$imagedrescription','$price','$brand')";
 

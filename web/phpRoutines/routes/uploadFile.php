@@ -10,7 +10,7 @@ function uploadFile(){
   $imagedrescription = $_POST['descript'];
   $price= (float)$_POST['price'];
   $brand = $_POST['brand'];
-  $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbNameImages,$dbPort);
+  $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
   $tableName = $_POST["userName"];
   $sql = "INSERT INTO $dbTableImages (imagename,username,imageaddress,imagedescription,price,brand)
     VALUES ('$imageName','$userName','$imageaddress','$imagedrescription',$price,'$brand')";
