@@ -23,6 +23,7 @@ function registration($tableName){
     // VALUES ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
       $sql = "INSERT INTO $tableName values (username,fullname,email,usersaddress,userspassword,token)
     VALUES ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
+    echo $sql;
       $conn->exec($sql);
       // createImagesTable($userName);
       $responseDictionary = array("status"=>"200","message"=>"O usuário foi criado com sucesso!");
