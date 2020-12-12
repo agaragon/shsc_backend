@@ -8,6 +8,7 @@ function signIn(){
     $token = $_POST['token'];
     $sql = "SELECT fullname,email,usersaddress,username FROM user WHERE token='".$_POST["token"]."'";
     $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
+echo"<br>";
 echo$dbServername;
 echo"<br>";
 echo$dbopts["host"];
