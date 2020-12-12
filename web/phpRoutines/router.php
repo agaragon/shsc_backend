@@ -1,4 +1,5 @@
 <?php
+echo "Hello";
 $action = $_POST['action'];
 switch ($action) {
     case 'SAGA_REGISTRATION':
