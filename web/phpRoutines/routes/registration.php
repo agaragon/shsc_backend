@@ -12,7 +12,7 @@ function registration($tableName){
     $usersAddress = $_POST['address'];
     $usersPassword = $_POST['password'];
     $token = $_POST['token'];
-    $tableName = 'user';
+    $tableName = 'user_table';
     $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
     $shouldCreateUser = 0;
     $shouldCreateUser += checkExistence($_POST['userName'],'username',$tableName,$conn);
