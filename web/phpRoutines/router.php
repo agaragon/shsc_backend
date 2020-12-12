@@ -1,6 +1,8 @@
 <?php
-echo json_encode($_POST);
 $action = $_POST['action'];
+if(isset($action)){
+    echo $_POST;
+}
 switch ($action) {
     case 'SAGA_REGISTRATION':
         $tableName = 'user_table';
