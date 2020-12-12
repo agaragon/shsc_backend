@@ -18,7 +18,8 @@ function registration($tableName){
     $shouldCreateUser += checkExistence($_POST['fullName'],'fullname',$tableName,$conn);
     $shouldCreateUser += checkExistence($_POST['email'],'email',$tableName,$conn);
     if($shouldCreateUser === 0){
-    $sql = "INSERT INTO $dbUserTable values ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
+    $sql = "INSERT INTO $dbUserTable(username,fullname,email,usersaddress,userspassword,token)
+     values ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
       $conn->exec($sql);
       $responseDictionary = array("status"=>"200","message"=>"O usuário foi criado com sucesso!");
       createFolder($userName);
