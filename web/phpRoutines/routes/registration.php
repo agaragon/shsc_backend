@@ -25,6 +25,7 @@ function registration($tableName){
     VALUES ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
     echo $sql;
       $conn->exec($sql);
+    echo "execution successful";
       // createImagesTable($userName);
       $responseDictionary = array("status"=>"200","message"=>"O usuário foi criado com sucesso!");
       createFolder($userName);
