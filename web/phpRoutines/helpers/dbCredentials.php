@@ -19,10 +19,4 @@ $dbPort = (string)$dbopts["port"];
 $dbNameImages = "userimages";
 $dbTableImages = "images";
 
-// echo$dbopts["pass"];
-// echo$dbopts["host"];
-// echo$dbopts["path"];
-// echo ltrim($dbopts["path"],'/');
-// echo$dbopts["port"];
-
 ?>

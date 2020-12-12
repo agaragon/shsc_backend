@@ -3,7 +3,7 @@ echo "Hello";
 $action = $_POST['action'];
 switch ($action) {
     case 'SAGA_REGISTRATION':
-        $tableName = 'user';
+        $tableName = 'user_table';
         include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/headersConfig.php";
         include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/routes/registration.php";
         registration($tableName);
