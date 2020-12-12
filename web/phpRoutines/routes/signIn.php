@@ -6,7 +6,7 @@ $dbopts = parse_url(getenv('DATABASE_URL'));
 function signIn(){
     include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbCredentials.php";
     $token = $_POST['token'];
-    $sql = "SELECT fullname,email,usersaddress,username FROM user WHERE token='".$_POST["token"]."'";
+    $sql = "SELECT fullname,email,usersaddress,username FROM $dbUserTable WHERE token='".$_POST["token"]."'";
     $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
     $stmt = $conn->prepare($sql);
     $stmt->execute();
@@ -28,9 +28,6 @@ function signIn(){
         $searchResult["loginSuccessful"] = "true";
     }
     
-    // listUserFiles($username,$searchResult);
-    // echo json_encode(listUserFiles($fullname,$searchResult));
-    // listUserFiles($username,$searchResult);
     echo json_encode($searchResult);
     $conn = null;
 }

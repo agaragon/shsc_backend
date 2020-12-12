@@ -19,14 +19,8 @@ function registration($tableName){
     $shouldCreateUser += checkExistence($_POST['fullName'],'fullname',$tableName,$conn);
     $shouldCreateUser += checkExistence($_POST['email'],'email',$tableName,$conn);
     if($shouldCreateUser === 0){
-    //   $sql = "INSERT INTO $tableName (username,fullname,email,usersaddress,userspassword,token)
-    // VALUES ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
-      $sql = "INSERT INTO $tableName values ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
-    // VALUES ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
-    echo $sql;
+    $sql = "INSERT INTO $tableName values ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
       $conn->exec($sql);
-    echo "execution successful";
-      // createImagesTable($userName);
       $responseDictionary = array("status"=>"200","message"=>"O usuário foi criado com sucesso!");
       createFolder($userName);
       header('Content-Type: application/json');
