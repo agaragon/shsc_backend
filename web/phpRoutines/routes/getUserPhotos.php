@@ -18,6 +18,7 @@
         $connImages = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbNameImages,$dbPort);
         echo "step 2.5";
         $sqlImages = "SELECT imagename,imageaddress,imagedescription,price,brand FROM $dbTableImages WHERE username='$userName'";
+        echo $sqlImages;
         $stmtImages = $connImages->prepare($sqlImages);
         echo "Step3";
         $stmtImages->execute();
