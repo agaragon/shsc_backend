@@ -6,14 +6,14 @@
     function getUserPhotos(){
         include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbCredentials.php";
         $token = $_POST['token'];
-        $connMain = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName);
+        $connMain = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
         $sqlMain = "SELECT username FROM user WHERE token='".$_POST["token"]."'";
         $stmtMain = $connMain->prepare($sqlMain);
         $stmtMain->execute();
         $resultMain = $stmtMain->fetchAll();
         $userName = $resultMain[0][0];
 
-        $connImages = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbNameImages);
+        $connImages = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbNameImages,$dbPort);
         $sqlImages = "SELECT imagename,imageaddress,imagedescription,price,brand FROM $dbTableImages WHERE username='$userName'";
         $stmtImages = $connImages->prepare($sqlImages);
         $stmtImages->execute();
