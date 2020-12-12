@@ -17,7 +17,7 @@ $dbPort = (string)$dbopts["port"];
 // $dbPassword = "";
 // $dbName = "users";
 $dbNameImages = "userimages";
-$dbTableImages = "images";
+$dbTableImages = "images_table";
 $dbUserTable = "user_table";
 
 ?>
