@@ -16,6 +16,7 @@
         $userName = $resultMain[0][0];
         echo $userName;
         $connImages = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbNameImages,$dbPort);
+        echo json_decode($connImages);
         echo "step 2.5";
         $sqlImages = "SELECT imagename,imageaddress,imagedescription,price,brand FROM $dbTableImages WHERE username='$userName'";
         echo $sqlImages;
