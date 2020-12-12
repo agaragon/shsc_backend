@@ -19,7 +19,9 @@ function registration($tableName){
     $shouldCreateUser += checkExistence($_POST['fullName'],'fullname',$tableName,$conn);
     $shouldCreateUser += checkExistence($_POST['email'],'email',$tableName,$conn);
     if($shouldCreateUser === 0){
-      $sql = "INSERT INTO $tableName (username,fullname,email,usersaddress,userspassword,token)
+    //   $sql = "INSERT INTO $tableName (username,fullname,email,usersaddress,userspassword,token)
+    // VALUES ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
+      $sql = "INSERT INTO $tableName values (username,fullname,email,usersaddress,userspassword,token)
     VALUES ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
       $conn->exec($sql);
       // createImagesTable($userName);
