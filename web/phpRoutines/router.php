@@ -1,8 +1,7 @@
 <?php
+
 $action = $_POST['action'];
-if(!isset($action)){
-    echo json_encode($_POST);
-}
+if(isset($action)){
 switch ($action) {
     case 'SAGA_REGISTRATION':
         $tableName = 'user_table';
@@ -30,5 +29,5 @@ switch ($action) {
         include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/routes/getUserPhotos.php";
         getUserPhotos();
     break;
-}
+}};
 ?>
