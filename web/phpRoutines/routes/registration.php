@@ -12,14 +12,14 @@ function registration($tableName){
     $usersAddress = $_POST['address'];
     $usersPassword = $_POST['password'];
     $token = $_POST['token'];
-    $tableName = 'user_table';
+    // $tableName = 'user_table';
     $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
     $shouldCreateUser = 0;
     $shouldCreateUser += checkExistence($_POST['userName'],'username',$tableName,$conn);
     $shouldCreateUser += checkExistence($_POST['fullName'],'fullname',$tableName,$conn);
     $shouldCreateUser += checkExistence($_POST['email'],'email',$tableName,$conn);
     if($shouldCreateUser === 0){
-    $sql = "INSERT INTO $tableName values ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
+    $sql = "INSERT INTO $dbUserTable values ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
       $conn->exec($sql);
       $responseDictionary = array("status"=>"200","message"=>"O usuário foi criado com sucesso!");
       createFolder($userName);

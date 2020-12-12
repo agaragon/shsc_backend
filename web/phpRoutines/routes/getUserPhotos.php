@@ -7,7 +7,7 @@
         include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbCredentials.php";
         $token = $_POST['token'];
         $connMain = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
-        $sqlMain = "SELECT username FROM user WHERE token='".$_POST["token"]."'";
+        $sqlMain = "SELECT username FROM $dbUserTable WHERE token='".$_POST["token"]."'";
         echo "Step1";
         $stmtMain = $connMain->prepare($sqlMain);
         $stmtMain->execute();
