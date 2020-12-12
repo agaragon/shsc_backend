@@ -6,6 +6,7 @@
     function getUserPhotos(){
         include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbCredentials.php";
         $token = $_POST['token'];
+        echo "Hello";
         $connMain = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
         $sqlMain = "SELECT username FROM user WHERE token='".$_POST["token"]."'";
         $stmtMain = $connMain->prepare($sqlMain);
