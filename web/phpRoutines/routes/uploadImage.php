@@ -1,7 +1,7 @@
 <?php
 
 function uploadImage(){
-  $path =  '/' . 'app' . '/' . 'userData' . '/' . $_POST['fullName'] . "/";
+  $path =  "../../userData/" . $_POST['fullName'] . "/";
   $path = $path . basename( $_FILES['fileName']['name']);
   $file_type = $_FILES['fileName']['type'];
   $allowed = array("image/jpeg", "image/gif", "image/png");
