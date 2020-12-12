@@ -2,6 +2,9 @@
 function checkExistence($value,$column,$tableName,$conn) {
     echo "step1";
     $sql = "SELECT $column FROM $tableName WHERE $column='".$value."'";
+    echo '<br>';
+    echo $sql;
+    echo '<br>';
     echo "step2";
     $stmt = $conn->prepare($sql);
     echo "step3";
