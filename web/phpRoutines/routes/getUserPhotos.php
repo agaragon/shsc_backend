@@ -14,7 +14,7 @@
         echo "Step2";
         $resultMain = $stmtMain->fetchAll();
         $userName = $resultMain[0][0];
-
+        echo $userName;
         $connImages = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbNameImages,$dbPort);
         $sqlImages = "SELECT imagename,imageaddress,imagedescription,price,brand FROM $dbTableImages WHERE username='$userName'";
         $stmtImages = $connImages->prepare($sqlImages);
