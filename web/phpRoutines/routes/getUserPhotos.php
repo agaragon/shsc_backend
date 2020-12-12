@@ -15,7 +15,6 @@
         $connImages = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
         $sqlImages = "SELECT imagename,imageaddress,imagedescription,price,brand FROM $dbTableImages WHERE username='$userName'";
         $stmtImages = $connImages->prepare($sqlImages);
-        // $stmtImages = $connImages->exec($sqlImages);
         $stmtImages->execute();
         $resultImages = $stmtImages->fetchAll();
 
