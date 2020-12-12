@@ -9,6 +9,7 @@ switch ($action) {
         registration($tableName);
     break;
     case 'SAGA_LOGIN':
+        echo "SAGA_LOGIN";
         include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/routes/signIn.php";
         signIn();
     break;
