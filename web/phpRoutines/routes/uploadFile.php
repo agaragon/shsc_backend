@@ -6,7 +6,8 @@ function uploadFile(){
   $path =  "../userData/" . $_POST['fullName'] . "/";
   $path = $path . basename( $_FILES['fileName']['name']);
   $userName = $_POST['userName'];
-  $imageaddress = $path;
+  // $imageaddress = $path;
+  $imageaddress = $_POST['imageAddress'];
   $imagedrescription = $_POST['descript'];
   $price= (float)$_POST['price'];
   $brand = $_POST['brand'];
