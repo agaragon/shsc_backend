@@ -11,9 +11,9 @@
         $stmtMain = $connMain->prepare($sqlMain);
         $stmtMain->execute();
         $resultMain = $stmtMain->fetchAll();
-        $userName = $resultMain[0][0];
+        $username = $resultMain[0][0];
         $connImages = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
-        $sqlImages = "SELECT imagename,imageaddress,imagedescription,price,brand FROM $dbTableImages WHERE username='$userName'";
+        $sqlImages = "SELECT imagename,imageaddress,imagedescription,price,brand FROM $dbTableImages WHERE username='$username'";
         $stmtImages = $connImages->prepare($sqlImages);
         $stmtImages->execute();
         $resultImages = $stmtImages->fetchAll();

@@ -7,17 +7,20 @@ $dbopts = parse_url(getenv('DATABASE_URL'));
 // $dbUsername = "epiz_26818797";
 // $dbPassword = "2GmzkhXIquStP15";
 // $dbName = "epiz_26818797_users";
-$dbUsername = $dbopts["user"];
-$dbPassword = $dbopts["pass"];                   
-$dbServername = $dbopts["host"];
-$dbName = ltrim($dbopts["path"],'/');
-$dbPort = (string)$dbopts["port"];
-// $dbServername = "localhost";
-// $dbUsername = "root";
-// $dbPassword = "";
-// $dbName = "users";
-$dbNameImages = "userimages";
-$dbTableImages = "images_table";
+// if(isset($dbopts)){
+    $dbUsername = $dbopts["user"];
+    $dbPassword = $dbopts["pass"];                   
+    $dbServername = $dbopts["host"];
+    $dbName = ltrim($dbopts["path"],'/');
+    $dbPort = (string)$dbopts["port"];
+// }else{
+//     $dbUsername = "root";
+//     $dbPassword = "";
+//     $dbServername = "localhost";
+//     $dbName = "users";
+//     $dbPort = "5432";
+// }
 $dbUserTable = "user_table";
+$dbTableImages = "images_table";
 
 ?>

@@ -7,22 +7,22 @@ function registration($tableName){
   include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbCredentials.php";
   try {
     $fullName = $_POST['fullName'];
-    $userName = $_POST['userName'];
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $usersAddress = $_POST['address'];
     $usersPassword = $_POST['password'];
     $token = $_POST['token'];
     $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
     $shouldCreateUser = 0;
-    $shouldCreateUser += checkExistence($_POST['userName'],'username',$tableName,$conn);
+    $shouldCreateUser += checkExistence($_POST['username'],'username',$tableName,$conn);
     $shouldCreateUser += checkExistence($_POST['fullName'],'fullname',$tableName,$conn);
     $shouldCreateUser += checkExistence($_POST['email'],'email',$tableName,$conn);
     if($shouldCreateUser === 0){
     $sql = "INSERT INTO $dbUserTable(username,fullname,email,usersaddress,userspassword,token)
-     values ('$fullName','$userName','$email','$usersAddress','$usersPassword','$token')";
+     values ('$fullName','$username','$email','$usersAddress','$usersPassword','$token')";
       $conn->exec($sql);
       $responseDictionary = array("status"=>"200","message"=>"O usuário foi criado com sucesso!");
-      createFolder($userName);
+      createFolder($username);
       header('Content-Type: application/json');
       echo json_encode($responseDictionary);
     }else{
