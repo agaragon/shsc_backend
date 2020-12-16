@@ -1,5 +1,4 @@
 <?php 
-
 function createDBConnection($servername,$username,$password,$dbname,$port){
   try{
     // $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -9,6 +8,7 @@ function createDBConnection($servername,$username,$password,$dbname,$port){
     $error = array("status"=>"500",
     "error"=>"Could not connect to db"
   );
+  echo $e;
   return $error;
   }
 }
