@@ -1,10 +1,12 @@
 <?php
 
 function uploadFile(){
-  include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbCredentials.php";
+  include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/dbCredentials.php";
+  echo json_encode($_POST);
   $imageName = $_POST["imageName"];
-  $path =  "../userData/" . $_POST['fullName'] . "/";
-  $path = $path . basename( $_FILES['fileName']['name']);
+  // $path =  "../userData/" . $_POST['username'] . "/";
+  // $path = $path . basename( $_POST['fileName']);
+  // $path = $path . basename( $_FILES['fileName']['name']);
   $username = $_POST['username'];
   $imageaddress = $_POST['imageAddress'];
   $imagedrescription = $_POST['descript'];

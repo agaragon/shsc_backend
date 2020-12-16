@@ -16,7 +16,7 @@ function signIn(){
     $usersaddress = $result[0][2];
     $username = $result[0][3];
     $searchResult = array(
-        "fullName"=>$fullname,
+        "fullname"=>$fullname,
         "email"=>$email,
         "token"=>$token,
         "usersaddress"=>$usersaddress,

@@ -12,7 +12,7 @@ switch ($action) {
         include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/routes/signIn.php";
         signIn();
     break;
-    case "SAGA_SEND_IMAGE_INFO":
+    case "saga/SEND_IMAGE_INFO":
         include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/headersConfig.php";
         include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/dbConnection.php";
         include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/routes/uploadFile.php";
@@ -23,7 +23,7 @@ switch ($action) {
         include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/routes/uploadImage.php";
         uploadImage();
     break;
-    case "SAGA_GET_STORE_PHOTOS":
+    case "saga/GET_PHOTOS":
         include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/headersConfig.php";
         include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/routes/getUserPhotos.php";
         getUserPhotos();

@@ -1,10 +1,10 @@
 <?php 
-    include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/headersConfig.php";
-    include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbConnection.php";
-    include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/listUserFiles.php";
+    include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/headersConfig.php";
+    include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/dbConnection.php";
+    include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/listUserFiles.php";
     
     function getUserPhotos(){
-        include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbCredentials.php";
+        include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/dbCredentials.php";
         $token = $_POST['token'];
         $connMain = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
         $sqlMain = "SELECT username FROM $dbUserTable WHERE token='".$_POST["token"]."'";
