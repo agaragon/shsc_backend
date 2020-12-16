@@ -1,12 +1,12 @@
 <?php
-include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbConnection.php";
-include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/checkExistence.php";
-include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/createFolder.php";
+include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/dbConnection.php";
+include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/checkExistence.php";
+include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/createFolder.php";
 
 function registration($tableName){
-  include $_SERVER["DOCUMENT_ROOT"] . "/phpRoutines/helpers/dbCredentials.php";
+  include $_SERVER["DOCUMENT_ROOT"] . "/web/phpRoutines/helpers/dbCredentials.php";
   try {
-    $fullName = $_POST['fullName'];
+    $fullname = $_POST['fullname'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $usersAddress = $_POST['address'];
@@ -15,11 +15,11 @@ function registration($tableName){
     $conn = createDBConnection($dbServername,$dbUsername,$dbPassword,$dbName,$dbPort);
     $shouldCreateUser = 0;
     $shouldCreateUser += checkExistence($_POST['username'],'username',$tableName,$conn);
-    $shouldCreateUser += checkExistence($_POST['fullName'],'fullname',$tableName,$conn);
+    $shouldCreateUser += checkExistence($_POST['fullname'],'fullname',$tableName,$conn);
     $shouldCreateUser += checkExistence($_POST['email'],'email',$tableName,$conn);
     if($shouldCreateUser === 0){
     $sql = "INSERT INTO $dbUserTable(username,fullname,email,usersaddress,userspassword,token)
-     values ('$fullName','$username','$email','$usersAddress','$usersPassword','$token')";
+     values ('$fullname','$username','$email','$usersAddress','$usersPassword','$token')";
       $conn->exec($sql);
       $responseDictionary = array("status"=>"200","message"=>"O usuário foi criado com sucesso!");
       createFolder($username);
